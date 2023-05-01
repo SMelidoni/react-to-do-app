@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+# React To Do App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project features a To Do app built using React. It allows users to create, edit, and delete tasks, helping them to stay organised and manage their time effectively.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before running the React To Do App, make sure you have the following software and tools installed on your machine:
 
-### `npm start`
+- Node.js v18.16.0 or later
+- npm (Node Package Manager) - this comes bundled with Node.js
+- Visual Studio Code (or any other code editor of your choice)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To install and run the React To Do App, follow these steps:
 
-### `npm test`
+1. Clone this repository to your local machine: `git clone https://github.com/SMelidoni/react-todo-app.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note: By default, the `develop` branch will be checked out. However, if you want to use the most stable version, please check out the `main` branch by running: `git checkout main`
 
-### `npm run build`
+2. Navigate into the project directory: `cd react-todo-app`
+3. Install the dependencies using npm: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and navigate to `http://localhost:3000` to see the app in action.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Note: This project was developed using Node.js v18.16.0 and Visual Studio Code, but you can use any code editor of your choice.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To use the To Do app, follow these steps:
 
-### `npm run eject`
+1. Launch the app in your web browser.
+2. Add a new task by typing the task description in the input field and clicking the "Add" button or pressing the Enter key.
+3. Edit an existing task by clicking on the task text, modifying the description, and then clicking the "Save" button or pressing the Enter key.
+4. Delete a task by clicking the "Delete" button next to the task you want to remove.
+5. Mark a task as complete by clicking the checkbox next to the task description.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you would like to contribute to this project, please follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Fork this repository to your own GitHub account.
+2. Create a new branch with a descriptive name.
+3. Make the desired changes to the code.
+4. Test your changes to ensure they work as expected.
+5. Submit a pull request to this repository with a description of your changes.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!--
 
-## Learn More
+## Acknowledgments
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was inspired by [this tutorial](https://www.google.com). Thanks to the author for their helpful guidance!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-->
