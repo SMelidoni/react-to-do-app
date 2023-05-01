@@ -7,3 +7,4 @@
     - TODO.md
     - CHANGELOG.md
   - Updated stylesheets to use SASS
+  - Added PR Template
