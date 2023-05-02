@@ -8,3 +8,4 @@
     - CHANGELOG.md
   - Updated stylesheets to use SASS
   - Added PR Template
+- Added initial homepage setup
