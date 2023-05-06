@@ -6,7 +6,7 @@
 
 .todo-header {
   color: white;
-  font-size: calc(15px + 2vmin);
+  font-size: calc(10px + 2vmin);
   margin-bottom: 2rem;
   text-align: center;
   text-decoration: none;
@@ -22,7 +22,7 @@
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: 70%;
+  width: 100%;
 }
 
 .todo-input-container {
