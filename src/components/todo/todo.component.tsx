@@ -29,7 +29,7 @@ const Todo: FC = () => {
               addTask();
             }
           }}
-          placeholder='Enter task'
+          placeholder='ENTER TASK'
         />
         <GlobalButton label='Add' onClick={addTask}></GlobalButton>
       </div>
