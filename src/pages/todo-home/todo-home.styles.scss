@@ -43,6 +43,10 @@
   .header-text-todo::after {
     width: 100%;
   }
+
+  .todo-home-content {
+    z-index: 2;
+  }
 }
 
 @media screen and (max-width: 768px) {

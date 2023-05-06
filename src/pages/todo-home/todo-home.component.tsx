@@ -1,3 +1,4 @@
+import Todo from '../../components/todo/todo.component';
 import './todo-home.styles.scss';
 
 import React, { FC } from 'react';
@@ -9,7 +10,9 @@ const ToDoHome: FC = () => {
         <h1 className='header-text header-text-react'>React</h1>
         <h1 className='header-text header-text-todo'>To-Do</h1>
       </header>
-      <div className='todo-home-content'></div>
+      <div className='todo-home-content'>
+        <Todo />
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@
 ## High Priority
 
 - [x] Initial Project Setup
-- [ ] Add functionality to Add Task
+- [x] Add functionality to Add Task
 - [ ] Add functionality to Edit Task
 - [ ] Add functionality to Delete Task
 - [ ] Add page not found
