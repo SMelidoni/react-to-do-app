@@ -1,6 +1,7 @@
 import './todo.styles.scss';
 
 import React, { FC, useState } from 'react';
+import { FaTrash, FaPencilAlt } from 'react-icons/fa';
 
 interface Task {
   id: number;
@@ -76,7 +77,7 @@ const Todo: FC = () => {
                   className='edit-input'
                   type='text'
                   value={editValue}
-                  onChange={(e) => setEditValue(e.target.value.toUpperCase())}
+                  onChange={(e) => setEditValue(e.target.value)}
                 />
                 <button
                   className='save-button'
@@ -89,18 +90,14 @@ const Todo: FC = () => {
               <div className='task-display'>
                 {task.name}
                 <div className='button-container'>
-                  <button
+                  <FaPencilAlt
                     className='edit-button'
                     onClick={() => editMode(task.id, task.name)}
-                  >
-                    Edit
-                  </button>
-                  <button
+                  />
+                  <FaTrash
                     className='delete-button'
                     onClick={() => deleteTask(task.id)}
-                  >
-                    Delete
-                  </button>
+                  />
                 </div>
               </div>
             )}

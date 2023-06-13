@@ -1,17 +1,29 @@
+// Theme
+$button-border-color: #ffffff;
+$delete-color: rgba(255, 105, 105, 0.7);
+$edit-color: rgba(138, 43, 226, 0.7);
 $primary-color: rgba(246, 139, 31, 0.1);
 $secondary-color: rgba(25, 185, 225, 0.7);
 $tertiary-color: rgba(255, 152, 0, 0.7);
-$edit-color: rgba(138, 43, 226, 0.7);
-$delete-color: rgba(255, 105, 105, 0.7);
-$button-border-color: #ffffff;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
 
 .todo-container {
   background-color: $primary-color;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  width: 800px;
-  margin: 2rem auto;
+  width: 700px;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 90%;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 90%;
+  }
 
   .todo-header {
     color: #fafafa;
@@ -24,40 +36,51 @@ $button-border-color: #ffffff;
   }
 
   .todo-input-container {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-bottom: 1rem;
 
+    @media (min-width: $breakpoint-tablet) {
+      align-items: center;
+      flex-direction: row;
+    }
+
     .todo-input {
-      flex-grow: 1;
-      padding: 10px 15px;
-      font-size: 1rem;
-      color: #ffffff;
       background-color: #393e46;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      color: #ffffff;
+      flex-grow: 1;
       font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      overflow: hidden;
+      padding: 10px 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &:focus {
         outline: none;
       }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+      }
     }
 
     .add-button {
+      animation: floating 0.8s ease-in-out infinite;
       background-color: transparent;
       border: 2px solid $button-border-color;
       border-radius: 5px;
-      padding: 10px 20px;
-      margin-left: 1rem;
+      color: #ffffff;
       cursor: pointer;
       display: inline-block;
-      color: #ffffff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1rem;
+      margin-left: 1rem;
+      padding: 10px 20px;
       text-transform: uppercase;
       transition: all 0.2s ease-in-out;
-      font-size: 1rem;
-      font-family: 'Press Start 2P', cursive;
-      animation: floating 0.8s ease-in-out infinite;
-      box-shadow: inset 0 0 10px $tertiary-color;
 
       &:hover {
         background-color: rgba($tertiary-color, 0.3);
@@ -66,32 +89,43 @@ $button-border-color: #ffffff;
       &:active {
         background-color: rgba($tertiary-color, 0.3);
       }
+
+      @media (max-width: $breakpoint-tablet) {
+        font-size: 0.8rem;
+        margin: 0 0.3rem;
+        padding: 5px 10px;
+      }
     }
   }
 
   .todo-list {
+    color: #ffffff;
     list-style: none;
     padding-left: 0;
-    color: #ffffff;
 
     .todo-item {
-      padding: 10px 15px;
-      font-size: 1rem;
-      color: #ffffff;
-      background-color: #393e46;
+      background: linear-gradient(120deg, #393e46, #535c68);
       border-radius: 5px;
-      margin-bottom: 10px;
+      color: #ffffff;
       font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      padding: 10px 15px;
 
       .edit-input {
-        flex-grow: 1;
-        padding: 10px 15px;
-        font-size: 1rem;
-        color: #ffffff;
         background-color: #393e46;
-        border-radius: 5px;
-        margin-bottom: 10px;
+        color: #ffffff;
+        flex-grow: 1;
         font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        text-transform: none;
+
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 0.8rem;
+          padding: 5px 10px;
+        }
       }
 
       &:focus {
@@ -100,28 +134,36 @@ $button-border-color: #ffffff;
 
       .edit-input-container,
       .task-display {
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
         text-transform: none;
+        width: 100%;
+      }
+
+      .button-container {
+        margin-top: 0.5rem;
       }
 
       .edit-button,
       .delete-button {
+        animation: floating 0.8s ease-in-out infinite;
         background-color: transparent;
         border: 2px solid $button-border-color;
         border-radius: 5px;
-        padding: 10px 20px;
-        margin: 0 0.5rem;
+        color: #ffffff;
         cursor: pointer;
         display: inline-block;
-        color: #ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+        margin: 0 0.3rem;
+        padding: 10px 20px;
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
-        font-size: 1rem;
-        font-family: 'Press Start 2P', cursive;
-        animation: floating 0.8s ease-in-out infinite;
+
+        @media (min-width: $breakpoint-tablet) {
+          margin: 0 0.3rem;
+        }
       }
 
       .edit-button {
@@ -149,21 +191,19 @@ $button-border-color: #ffffff;
       }
 
       .save-button {
+        animation: floating 0.8s ease-in-out infinite;
         background-color: transparent;
         border: 2px solid $button-border-color;
         border-radius: 5px;
-        padding: 10px 20px;
-        margin-top: 0.5rem;
+        color: #ffffff;
         cursor: pointer;
         display: inline-block;
-        color: #ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        padding: 10px 20px;
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
-        font-size: 1rem;
-        font-family: 'Press Start 2P', cursive;
-        animation: floating 0.8s ease-in-out infinite;
-        box-shadow: inset 0 0 10px rgba(255, 255, 0, 0.7);
-        margin-left: 1rem;
 
         &:hover {
           background-color: rgba(255, 255, 0, 0.2);
@@ -171,6 +211,21 @@ $button-border-color: #ffffff;
 
         &:active {
           background-color: rgba(255, 255, 0, 0.2);
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+          margin-left: 1rem;
+          margin-top: 0;
+        }
+      }
+
+      .edit-button,
+      .delete-button,
+      .save-button {
+        @media (max-width: $breakpoint-tablet) {
+          font-size: 0.8rem;
+          margin: 0 0.3rem;
+          padding: 5px 10px;
         }
       }
     }
