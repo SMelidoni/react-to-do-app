@@ -4,9 +4,8 @@
 
 - [x] Initial Project Setup
 - [x] Add functionality to Add Task
-- [ ] Add functionality to Edit Task
-- [ ] Add functionality to Delete Task
-- [ ] Add page not found
+- [x] Add functionality to Edit Task
+- [x] Add functionality to Delete Task
 
 ## Low Priority
 
