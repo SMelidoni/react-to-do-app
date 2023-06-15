@@ -7,6 +7,7 @@ interface Task {
   id: number;
   name: string;
   editing: boolean;
+  completed: boolean;
 }
 
 const Todo: FC = () => {
@@ -17,7 +18,10 @@ const Todo: FC = () => {
 
   const addTask = () => {
     if (inputValue.trim()) {
-      setTasks([...tasks, { id: nextId, name: inputValue, editing: false }]);
+      setTasks([
+        ...tasks,
+        { id: nextId, name: inputValue, editing: false, completed: false },
+      ]);
       setInputValue('');
       setNextId(nextId + 1);
     }
@@ -45,6 +49,14 @@ const Todo: FC = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  const handleCheck = (id: number) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  };
+
   return (
     <div className='todo-container'>
       <h2 className='todo-header'>Add Task</h2>
@@ -68,39 +80,55 @@ const Todo: FC = () => {
       <ul className='todo-list'>
         {tasks.map((task) => (
           <li
-            className={`todo-item ${task.editing ? 'editing' : ''}`}
+            className={`todo-item ${task.editing ? 'editing' : ''} ${
+              task.completed ? 'completed' : ''
+            }`}
             key={task.id}
           >
-            {task.editing ? (
-              <div className='edit-input-container'>
-                <input
-                  className='edit-input'
-                  type='text'
-                  value={editValue}
-                  onChange={(e) => setEditValue(e.target.value)}
-                />
-                <button
-                  className='save-button'
-                  onClick={() => saveTask(task.id)}
-                >
-                  Save
-                </button>
-              </div>
-            ) : (
-              <div className='task-display'>
-                {task.name}
-                <div className='button-container'>
-                  <FaPencilAlt
-                    className='edit-button'
-                    onClick={() => editMode(task.id, task.name)}
+            <div className='task-container'>
+              <input
+                type='checkbox'
+                className='task-checkbox'
+                checked={task.completed}
+                onChange={() => handleCheck(task.id)}
+              />
+              {task.editing ? (
+                <div className='edit-input-container'>
+                  <input
+                    className='edit-input'
+                    type='text'
+                    value={editValue}
+                    onChange={(e) => setEditValue(e.target.value)}
                   />
-                  <FaTrash
-                    className='delete-button'
-                    onClick={() => deleteTask(task.id)}
-                  />
+                  <button
+                    className='save-button'
+                    onClick={() => saveTask(task.id)}
+                  >
+                    Save
+                  </button>
                 </div>
-              </div>
-            )}
+              ) : (
+                <div className='task-display'>
+                  <span
+                    className={`task-text ${
+                      task.completed ? 'task-text-completed' : ''
+                    }`}
+                  >
+                    {task.name}
+                  </span>
+                  <div className='button-container'>
+                    <FaPencilAlt
+                      className='edit-button'
+                      onClick={() => editMode(task.id, task.name)}
+                    />
+                    <FaTrash
+                      className='delete-button'
+                      onClick={() => deleteTask(task.id)}
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ul>
