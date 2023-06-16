@@ -10,6 +10,7 @@
 ## Low Priority
 
 - [ ] Make app responsive (mobile/desktop)
+  - [ ] Fix background styling (issue with mobile - 320px) 
 - [ ] Setup DB and Redux to store user task details
 
 # Ideas
